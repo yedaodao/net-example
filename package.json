@@ -1,0 +1,13 @@
+{
+  "name": "net-example",
+  "version": "0.1.0",
+  "description": "",
+  
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yedaodao/net-example.git"
+  },
+  
+  "author": "yedaodao",
+  "license": "MIT"
+}
