@@ -1,3 +1,8 @@
+const crypto = require('crypto');
+
+
+const maxCount = 100000;
+
 /**
  *
  * @param req
@@ -10,5 +15,12 @@ module.exports = function (req, res) {
         'Content-Type': 'text/plain'
     });
     res.write(body);
+    let c = maxCount;
+    while (c > 0) {
+        crypto.createHmac('sha256', c)
+            .update('I love Node.js')
+            .digest('hex');
+        c--;
+    }
     res.end('ok');
 };
