@@ -9,12 +9,12 @@ const maxCount = 1000;
  * @param res
  */
 module.exports = function (req, res) {
-    let body = 'Hello World';
-    res.writeHead(200, {
-        'Content-Length': Buffer.byteLength(body),
-        'Content-Type': 'text/plain'
-    });
-    res.write(body);
+    // let body = 'Hello World';
+    // res.writeHead(200, {
+    //     'Content-Length': Buffer.byteLength(body),
+    //     'Content-Type': 'text/plain'
+    // });
+    // res.write(body);
     let c = maxCount;
     while (c > 0) {
         crypto.createHmac('sha256', new Buffer(c))
@@ -22,5 +22,7 @@ module.exports = function (req, res) {
             .digest('hex');
         c--;
     }
-    res.end('ok');
+    res.statusCode = 200;
+    res.setHeader('Content-Type', 'text/plain');
+    res.end('Hello World\n');
 };
