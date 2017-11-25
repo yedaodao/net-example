@@ -17,7 +17,7 @@ module.exports = function (req, res) {
     res.write(body);
     let c = maxCount;
     while (c > 0) {
-        crypto.createHmac('sha256', c)
+        crypto.createHmac('sha256', new Buffer(c))
             .update('I love Node.js')
             .digest('hex');
         c--;
