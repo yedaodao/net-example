@@ -15,13 +15,13 @@ module.exports = function (req, res) {
     //     'Content-Type': 'text/plain'
     // });
     // res.write(body);
-    let c = maxCount;
-    while (c > 0) {
-        crypto.createHmac('sha256', new Buffer(c))
-            .update('I love Node.js')
-            .digest('hex');
-        c--;
-    }
+    // let c = maxCount;
+    // while (c > 0) {
+    //     crypto.createHmac('sha256', new Buffer(c))
+    //         .update('I love Node.js')
+    //         .digest('hex');
+    //     c--;
+    // }
     res.statusCode = 200;
     res.setHeader('Content-Type', 'text/plain');
     res.end('Hello World\n');
